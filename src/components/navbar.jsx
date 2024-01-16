@@ -20,11 +20,10 @@ export const NavBar = () => {
         <img width='40' src={logo} />
         <h2 className="title-nav">Dockfolio</h2>
       </div>
-      <div>
-        <button className="btn-nav" onClick={() => navigate('/private')}>Visão geral</button>
+      <div className="nav-bar">
+        <button className="btn-nav" onClick={() => navigate('/private')}>Estrutura</button>
         <button className="btn-nav" onClick={() => navigate('/profile')}>Perfil</button>
-        <button className="btn-nav" onClick={() => alert('Ferramenta em desenvolvimento.')}>Compartilhar</button>
-        <button className="btn-nav" onClick={() => window.print()}>Baixar</button>
+        <button className="btn-nav" onClick={() => alert('Ferramenta em desenvolvimento.')}>Links</button>
         <button className="btn-nav" onClick={handleSignOut}>Sair</button>
       </div>
     </nav>

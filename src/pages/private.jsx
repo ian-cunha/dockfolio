@@ -4,6 +4,7 @@ import { auth } from "../config/firebase"
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "../components/navbar";
 import { Navigate } from 'react-router-dom'
+import { Structure } from "../components/structure";
 
 export const Private = () => {
   const handleSignOut = () => {
@@ -24,11 +25,9 @@ export const Private = () => {
     <section className="dockfolioPage">
       <NavBar />
       <h3 className="printme">Olá, {name}.</h3>
-      <div className='printme'>
-        <h2>Dados do Usuário</h2>
-        <p>Em breve você poderá ter seu currículo atualizado e de fácil acesso.</p>
-      </div>
+      <Structure />
       <button className="btn-nav no-printme" onClick={() => navigate('/profile')}>Configurar perfil</button>
+      <button className="btn-nav no-printme" onClick={() => window.print()}>Baixar estrutura</button>
       <button className="btn-nav no-printme" onClick={handleSignOut}>Sair</button>
     </section>
   )

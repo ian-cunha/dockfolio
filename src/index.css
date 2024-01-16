@@ -121,6 +121,14 @@ nav {
     align-items: center;
     padding: 5px 24px 24px 24px;
   }
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+  }
+  .field {
+    margin: 0;
+    padding: 30px;
+  }
 }
 
 .btn-nav {
@@ -206,4 +214,8 @@ fieldset {
 
 .name {
   font-size: 2em;
+}
+
+.structure {
+  margin: 24px;
 }
