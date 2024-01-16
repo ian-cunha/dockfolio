@@ -79,6 +79,13 @@ button:focus-visible {
   }
 }
 
+.container-logo {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .formBase {
   display: block;
   justify-content: center;

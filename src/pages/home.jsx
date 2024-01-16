@@ -54,7 +54,7 @@ export const Home = ({ user }) => {
   }
   return (
     <section className="home">
-      <div>
+      <div className="container-logo">
         <img width={150} src={logo} />
         <h1 className="title">Dockfolio</h1>
         <h4>Simples, rápido e prático.</h4>
