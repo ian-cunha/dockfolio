@@ -34,7 +34,9 @@ export const Profile = () => {
       <div className="dockfolioPage">
         <h2>Configurações do perfil</h2>
         <div>
-          <img className="photo" width='150' src={photo} />
+          {photo != null &&
+            <img className="photo" width='150' src={photo} />
+          }
           <p className="name">{name}</p>
           <p>Email: {email}</p>
         </div>
@@ -42,11 +44,11 @@ export const Profile = () => {
         <form>
           <h2>Dados do perfil</h2>
           <div>
-            <label className="labelHome" htmlFor="name">Nome</label><br/>
+            <label className="labelHome" htmlFor="name">Nome</label><br />
             <input className="inputHome" type="name" id="name" placeholder="Nome do usuário (obrigatório)" onChange={handleDisplayName} />
           </div>
           <div>
-            <label className="labelHome" htmlFor="photo">Foto</label><br/>
+            <label className="labelHome" htmlFor="photo">Foto</label><br />
             <input className="inputHome" type="text" id="photo" placeholder="URL da foto de perfil" onChange={handlePhotoURL} />
           </div>
         </form>

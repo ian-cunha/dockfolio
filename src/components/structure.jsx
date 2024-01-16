@@ -13,7 +13,9 @@ export const Structure = () => {
       <div className='printme'>
         <h2 className='no-printme'>Dados do Usuário</h2>
         <div className="top">
-          <img className="photo" width='150' src={photo} />
+          {photo != null &&
+            <img className="photo" width='150' src={photo} />
+          }
           <div>
             <p className="name-top">{name}</p>
             <p className="email-top">{email}</p>
