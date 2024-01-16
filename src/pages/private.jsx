@@ -24,7 +24,7 @@ export const Private = () => {
   return (
     <section className="dockfolioPage">
       <NavBar />
-      <h3 className="printme">Olá, {name}.</h3>
+      <h3 className="no-printme">Olá, {name}.</h3>
       <Structure />
       <button className="btn-nav no-printme" onClick={() => navigate('/profile')}>Configurar perfil</button>
       <button className="btn-nav no-printme" onClick={() => window.print()}>Baixar estrutura</button>

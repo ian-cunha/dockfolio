@@ -131,22 +131,27 @@ nav {
     align-items: center;
     padding: 5px 24px 24px 24px;
   }
+
   .nav-bar {
     display: block;
     justify-content: center;
   }
+
   .btn-nav {
     padding: 10px 10px;
   }
+
   .field {
     margin: 0;
     padding: 30px 0;
   }
+
   .inputHome {
     width: 70%;
     height: 35px;
     margin-bottom: 20px;
   }
+
   .home {
     min-width: 100%;
     min-height: 100%;
@@ -220,10 +225,11 @@ fieldset {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
-} 
+}
 
 .loading {
   display: flex;
@@ -242,4 +248,21 @@ fieldset {
 
 .structure {
   margin: 24px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-top {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 24px;
+}
+
+.email-top {
+  font-size: 1em;
+  margin: 0 24px;
 }
