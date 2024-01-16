@@ -7,6 +7,8 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  overflow-x: hidden;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -130,15 +132,18 @@ nav {
     padding: 5px 24px 24px 24px;
   }
   .nav-bar {
-    display: flex;
+    display: block;
     justify-content: center;
+  }
+  .btn-nav {
+    padding: 10px 10px;
   }
   .field {
     margin: 0;
     padding: 30px 0;
   }
   .inputHome {
-    width: 80%;
+    width: 70%;
     height: 35px;
     margin-bottom: 20px;
   }
