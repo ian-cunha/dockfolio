@@ -171,6 +171,17 @@ nav {
     padding: 5px 24px 24px 24px;
   }
 
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .structure-top {
+    text-align: center;
+  }
+
   .updateProfile {
     display: block;
     justify-content: center;
@@ -244,8 +255,18 @@ nav {
     display: none;
   }
 
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .printme {
     display: block;
+  }
+
+  .structure-top {
+    text-align: justify;
   }
 
   .structure-style {
