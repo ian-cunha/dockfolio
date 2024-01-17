@@ -88,6 +88,19 @@ button:focus-visible {
   text-align: center;
 }
 
+.updateProfile {
+  display: flex;
+  justify-content: center;
+}
+
+.formData {
+  margin: 0 10px;
+}
+
+.formTop {
+  margin: 0 10px;
+}
+
 .formBase {
   display: block;
   justify-content: center;
@@ -123,6 +136,11 @@ nav {
   padding: 0 24px;
 }
 
+
+.resume {
+  margin: 0 300px;
+}
+
 @media only screen and (max-width: 600px) {
   nav {
     display: block;
@@ -130,6 +148,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 5px 24px 24px 24px;
+  }
+
+  .updateProfile {
+    display: block;
+    justify-content: center;
   }
 
   .nav-bar {
@@ -157,6 +180,9 @@ nav {
     min-height: 100%;
     width: 100%;
     height: 100%;
+  }
+  .resume {
+    margin: 0 0;
   }
 }
 
@@ -192,6 +218,10 @@ nav {
 
   .printme {
     display: block;
+  }
+
+  .resume {
+    margin: 0 0;
   }
 }
 
