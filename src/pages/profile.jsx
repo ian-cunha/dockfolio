@@ -38,11 +38,21 @@ export const Profile = () => {
   const handleFormation2 = (event) => setFormation2(event.target.value)
   const handleFormation3 = (event) => setFormation3(event.target.value)
 
-  const handleUpdate = () => {
+  const handleUpdateName = () => {
     updateProfile(auth.currentUser, {
-      displayName: displayName, photoURL: photoURL
+      displayName: displayName
     }).then(() => {
-      alert('Atualizado')
+      alert('Nome atualizado')
+    }).catch((error) => {
+      alert(error)
+    });
+  }
+
+  const handleUpdatePhoto = () => {
+    updateProfile(auth.currentUser, {
+      photoURL: photoURL
+    }).then(() => {
+      alert('Foto atualizada')
     }).catch((error) => {
       alert(error)
     });
@@ -85,7 +95,7 @@ export const Profile = () => {
             <img className="photo" width='150' src={photo} />
           }
           <p className="name">{name}</p>
-          <p>Email: {email}</p>
+          <p className="email-top">{email}</p>
         </div>
 
         <h2>Dados do perfil</h2>
@@ -93,64 +103,65 @@ export const Profile = () => {
         <div className="updateProfile">
           <form className="formTop">
             <h3>Perfil</h3>
-            <div>
-              <label className="labelHome" htmlFor="name">Nome</label><br />
-              <input className="inputHome" type="name" id="name" defaultValue={name} placeholder="Nome do usuário (obrigatório)" onChange={handleDisplayName} />
+            <div className="formOrganizer">
+              <label className="labelHome" htmlFor="name">Nome</label>
+              <input className="inputProfile" type="name" id="name" defaultValue={name} placeholder="Nome do usuário (obrigatório)" onChange={handleDisplayName} />
+              <button className="btn-nav" type="submit" onClick={handleUpdateName}><i className="bi bi-check-lg"></i> Aplicar nome</button>
             </div>
-            <div>
-              <label className="labelHome" htmlFor="photo">Foto</label><br />
-              <input className="inputHome" type="text" id="photo" defaultValue={photo} placeholder="URL da foto de perfil" onChange={handlePhotoURL} />
+            <div className="formOrganizer">
+              <label className="labelHome" htmlFor="photo">Foto</label>
+              <input className="inputProfile" type="text" id="photo" defaultValue={photo} placeholder="URL da foto de perfil" onChange={handlePhotoURL} />
+              <button className="btn-nav" type="submit" onClick={handleUpdatePhoto}><i className="bi bi-check-lg"></i> Aplicar foto</button>
             </div>
-            <button className="btn-nav" type="submit" onClick={handleUpdate}>Aplicar</button>
           </form>
 
           <form className="formData">
             <h3>Dados</h3>
             <div>
               <label className="labelHome" htmlFor="function">Função</label><br />
-              <input className="inputHome" type="text" id="function" placeholder="Função" onChange={handleFunction} />
+              <input className="inputProfile" type="text" id="function" placeholder="Função" onChange={handleFunction} />
             </div>
             <div>
               <label className="labelHome" htmlFor="number">Número</label><br />
-              <input className="inputHome" type="number" id="number" placeholder="Número" onChange={handleNumber} />
+              <input className="inputProfile" type="number" id="number" placeholder="Número" onChange={handleNumber} />
             </div>
             <div>
               <label className="labelHome" htmlFor="address">Endereço</label><br />
-              <input className="inputHome" type="text" id="address" placeholder="Endereço" onChange={handleAddress} />
+              <input className="inputProfile" type="text" id="address" placeholder="Endereço" onChange={handleAddress} />
             </div>
             <div>
               <label className="labelHome" htmlFor="title">Resumo</label><br />
-              <input className="inputHome" type="text" id="title" placeholder="Resumo" onChange={handleResume} />
+              <input className="inputProfile" type="text" id="title" placeholder="Resumo" onChange={handleResume} />
             </div>
             <div>
               <label className="labelHome" htmlFor="experience">Experiência</label><br />
-              <input className="inputHome" type="text" id="experience" placeholder="Experiência" onChange={handleExperience} />
+              <input className="inputProfile" type="text" id="experience" placeholder="Experiência" onChange={handleExperience} />
             </div>
             <div>
               <label className="labelHome" htmlFor="experience">Experiência 2</label><br />
-              <input className="inputHome" type="text" id="experience" placeholder="Experiência" onChange={handleExperience2} />
+              <input className="inputProfile" type="text" id="experience" placeholder="Experiência" onChange={handleExperience2} />
             </div>
             <div>
               <label className="labelHome" htmlFor="experience">Experiência 3</label><br />
-              <input className="inputHome" type="text" id="experience" placeholder="Experiência" onChange={handleExperience3} />
+              <input className="inputProfile" type="text" id="experience" placeholder="Experiência" onChange={handleExperience3} />
             </div>
             <div>
               <label className="labelHome" htmlFor="formation">Formação</label><br />
-              <input className="inputHome" type="text" id="formation" placeholder="Formação" onChange={handleFormation} />
+              <input className="inputProfile" type="text" id="formation" placeholder="Formação" onChange={handleFormation} />
             </div>
             <div>
               <label className="labelHome" htmlFor="formation">Formação 2</label><br />
-              <input className="inputHome" type="text" id="formation" placeholder="Formação" onChange={handleFormation2} />
+              <input className="inputProfile" type="text" id="formation" placeholder="Formação" onChange={handleFormation2} />
             </div>
             <div>
               <label className="labelHome" htmlFor="formation">Formação 3</label><br />
-              <input className="inputHome" type="text" id="formation" placeholder="Formação" onChange={handleFormation3} />
+              <input className="inputProfile" type="text" id="formation" placeholder="Formação" onChange={handleFormation3} />
             </div>
-            <button className="btn-nav" type="submit" onClick={newDoc}>Confirmar</button>
+            <button className="btn-nav" type="submit" onClick={newDoc}><i className="bi bi-check-lg"></i> Confirmar</button>
           </form>
         </div>
 
-        <button className="btn-nav" onClick={() => navigate('/private')}>Voltar</button>
+        <button className="btn-nav back-profile" onClick={() => navigate('/private')}><i className="bi bi-arrow-left-circle"></i> Voltar</button>
       </div>
     </section>
   )

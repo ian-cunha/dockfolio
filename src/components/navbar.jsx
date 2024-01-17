@@ -21,10 +21,10 @@ export const NavBar = () => {
         <h2 className="title-nav">Dockfolio</h2>
       </div>
       <div className="nav-bar">
-        <button className="btn-nav" onClick={() => navigate('/private')}>Estrutura</button>
-        <button className="btn-nav" onClick={() => navigate('/profile')}>Perfil</button>
-        <button className="btn-nav" onClick={() => alert('Ferramenta em desenvolvimento.')}>Links</button>
-        <button className="btn-nav" onClick={handleSignOut}>Sair</button>
+        <button className="btn-nav" onClick={() => navigate('/private')}><i className="bi bi-house"></i> Estrutura</button>
+        <button className="btn-nav" onClick={() => navigate('/profile')}><i className="bi bi-person-circle"></i> Perfil</button>
+        <button className="btn-nav" onClick={() => alert('Ferramenta em desenvolvimento.')}><i className="bi bi-link-45deg"></i> Link</button>
+        <button className="btn-nav" onClick={handleSignOut}><i className="bi bi-x-circle"></i> Sair</button>
       </div>
     </nav>
   )

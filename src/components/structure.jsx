@@ -39,13 +39,40 @@ export const Structure = () => {
           {photo != null &&
             <img className="photo" width='150' src={photo} />
           }
-          <div className="structure-top">
-            <p className="name-top">{name}</p>
-            <p className="title-top"><i className="bi bi-briefcase"></i> {dataBase.function}</p>
-            <p className="title-top"><i className="bi bi-telephone"></i> {dataBase.number}</p>
-            <p className="title-top"><i className="bi bi-envelope"></i> {email}</p>
-            <p className="title-top"><i className="bi bi-geo-alt"></i> {dataBase.address}</p>
-          </div>
+          {photo != null &&
+            <div className="structure-top">
+              <p className="name-top">{name}</p>
+              {dataBase.function != null &&
+                <p className="title-top"><i className="bi bi-briefcase"></i> {dataBase.function}</p>
+              }
+              {dataBase.number != null &&
+                <p className="title-top"><i className="bi bi-telephone"></i> {dataBase.number}</p>
+              }
+              {email != null &&
+                <p className="title-top"><i className="bi bi-envelope"></i> {email}</p>
+              }
+              {dataBase.address != null &&
+                <p className="title-top"><i className="bi bi-geo-alt"></i> {dataBase.address}</p>
+              }
+            </div>
+          }
+          {photo === null &&
+            <div className="structure-top-center">
+              <p className="name-top">{name}</p>
+              {dataBase.function != null &&
+                <p className="title-top"><i className="bi bi-briefcase"></i> {dataBase.function}</p>
+              }
+              {dataBase.number != null &&
+                <p className="title-top"><i className="bi bi-telephone"></i> {dataBase.number}</p>
+              }
+              {email != null &&
+                <p className="title-top"><i className="bi bi-envelope"></i> {email}</p>
+              }
+              {dataBase.address != null &&
+                <p className="title-top"><i className="bi bi-geo-alt"></i> {dataBase.address}</p>
+              }
+            </div>
+          }
         </div>
 
         <div className="data">

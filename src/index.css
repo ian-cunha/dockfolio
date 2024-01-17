@@ -89,12 +89,19 @@ button:focus-visible {
 }
 
 .updateProfile {
-  display: flex;
+  display: block;
   justify-content: center;
 }
 
 .formData {
   margin: 0 10px;
+}
+
+.formOrganizer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .formTop {
@@ -124,6 +131,12 @@ button:focus-visible {
   margin-bottom: 20px;
 }
 
+.inputProfile {
+  width: 50%;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
 .aLink {
   cursor: pointer;
 }
@@ -143,6 +156,10 @@ nav {
 
 .structure-top {
   text-align: justify;
+}
+
+.structure-top-center {
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -185,8 +202,15 @@ nav {
     width: 100%;
     height: 100%;
   }
+
   .structure-style {
     margin: 0 0;
+  }
+
+  .inputProfile {
+    width: 90%;
+    height: 35px;
+    margin-bottom: 20px;
   }
 }
 
@@ -299,4 +323,14 @@ fieldset {
 .title-top {
   font-size: 1em;
   margin: 0 24px;
+}
+
+.back-profile {
+  margin-bottom: 50px;
+}
+
+.email-top {
+  margin: 0;
+  margin-bottom: 50px;
+  margin-top: -25px;
 }

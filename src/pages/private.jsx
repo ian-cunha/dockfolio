@@ -26,9 +26,9 @@ export const Private = () => {
       <NavBar />
       <h3 className="no-printme">Olá, {name}.</h3>
       <Structure />
-      <button className="btn-nav no-printme" onClick={() => navigate('/profile')}>Configurar perfil</button>
-      <button className="btn-nav no-printme" onClick={() => window.print()}>Baixar estrutura</button>
-      <button className="btn-nav no-printme" onClick={handleSignOut}>Sair</button>
+      <button className="btn-nav no-printme back-profile" onClick={() => navigate('/profile')}><i className="bi bi-gear"></i> Configurar perfil</button>
+      <button className="btn-nav no-printme back-profile" onClick={() => window.print()}><i className="bi bi-cloud-arrow-down"></i> Baixar estrutura</button>
+      <button className="btn-nav no-printme back-profile" onClick={handleSignOut}><i className="bi bi-x-circle"></i> Sair</button>
     </section>
   )
 }
