@@ -39,27 +39,35 @@ export const Structure = () => {
           {photo != null &&
             <img className="photo" width='150' src={photo} />
           }
-          <div>
+          <div className="structure-top">
             <p className="name-top">{name}</p>
-            <p className="email-top">{email}</p>
+            <p className="title-top"><i className="bi bi-briefcase"></i> {dataBase.function}</p>
+            <p className="title-top"><i className="bi bi-telephone"></i> {dataBase.number}</p>
+            <p className="title-top"><i className="bi bi-envelope"></i> {email}</p>
+            <p className="title-top"><i className="bi bi-geo-alt"></i> {dataBase.address}</p>
           </div>
         </div>
 
         <div className="data">
-          <div className="resume">
+          <div className="structure-style">
             <h3>Resumo</h3>
             <p>{dataBase.resume}</p>
           </div>
 
-          <div>
+          <div className="structure-style">
             <h3>Experiência</h3>
             <p>{dataBase.experience}</p>
+            <p>{dataBase.experience2}</p>
+            <p>{dataBase.experience3}</p>
           </div>
 
-          <div>
+          <div className="structure-style">
             <h3>Formação</h3>
             <p>{dataBase.formation}</p>
+            <p>{dataBase.formation2}</p>
+            <p>{dataBase.formation3}</p>
           </div>
+
         </div>
 
       </div>

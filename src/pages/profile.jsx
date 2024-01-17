@@ -10,15 +10,33 @@ export const Profile = () => {
 
   const [displayName, setDisplayName] = useState('')
   const [photoURL, setPhotoURL] = useState('')
+
+  const [func, setFunction] = useState('')
+  const [number, setNumber] = useState('')
+  const [address, setAddress] = useState('')
+
   const [resume, setResume] = useState('')
   const [experience, setExperience] = useState('')
+  const [experience2, setExperience2] = useState('')
+  const [experience3, setExperience3] = useState('')
   const [formation, setFormation] = useState('')
+  const [formation2, setFormation2] = useState('')
+  const [formation3, setFormation3] = useState('')
 
   const handleDisplayName = (event) => setDisplayName(event.target.value)
   const handlePhotoURL = (event) => setPhotoURL(event.target.value)
+
+  const handleFunction = (event) => setFunction(event.target.value)
+  const handleNumber = (event) => setNumber(event.target.value)
+  const handleAddress = (event) => setAddress(event.target.value)
+
   const handleResume = (event) => setResume(event.target.value)
   const handleExperience = (event) => setExperience(event.target.value)
+  const handleExperience2 = (event) => setExperience2(event.target.value)
+  const handleExperience3 = (event) => setExperience3(event.target.value)
   const handleFormation = (event) => setFormation(event.target.value)
+  const handleFormation2 = (event) => setFormation2(event.target.value)
+  const handleFormation3 = (event) => setFormation3(event.target.value)
 
   const handleUpdate = () => {
     updateProfile(auth.currentUser, {
@@ -41,9 +59,16 @@ export const Profile = () => {
     event.preventDefault()
 
     await setDoc(doc(storeApp, "profiles", uid), {
+      function: func,
+      number: number,
+      address: address,
       resume: resume,
       experience: experience,
+      experience2: experience2,
+      experience3: experience3,
       formation: formation,
+      formation2: formation2,
+      formation3: formation3,
     });
 
     alert('Atualizado')
@@ -70,11 +95,11 @@ export const Profile = () => {
             <h3>Perfil</h3>
             <div>
               <label className="labelHome" htmlFor="name">Nome</label><br />
-              <input className="inputHome" type="name" id="name" placeholder="Nome do usuário (obrigatório)" onChange={handleDisplayName} />
+              <input className="inputHome" type="name" id="name" defaultValue={name} placeholder="Nome do usuário (obrigatório)" onChange={handleDisplayName} />
             </div>
             <div>
               <label className="labelHome" htmlFor="photo">Foto</label><br />
-              <input className="inputHome" type="text" id="photo" placeholder="URL da foto de perfil" onChange={handlePhotoURL} />
+              <input className="inputHome" type="text" id="photo" defaultValue={photo} placeholder="URL da foto de perfil" onChange={handlePhotoURL} />
             </div>
             <button className="btn-nav" type="submit" onClick={handleUpdate}>Aplicar</button>
           </form>
@@ -82,16 +107,44 @@ export const Profile = () => {
           <form className="formData">
             <h3>Dados</h3>
             <div>
+              <label className="labelHome" htmlFor="function">Função</label><br />
+              <input className="inputHome" type="text" id="function" placeholder="Função" onChange={handleFunction} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="number">Número</label><br />
+              <input className="inputHome" type="number" id="number" placeholder="Número" onChange={handleNumber} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="address">Endereço</label><br />
+              <input className="inputHome" type="text" id="address" placeholder="Endereço" onChange={handleAddress} />
+            </div>
+            <div>
               <label className="labelHome" htmlFor="title">Resumo</label><br />
               <input className="inputHome" type="text" id="title" placeholder="Resumo" onChange={handleResume} />
             </div>
             <div>
               <label className="labelHome" htmlFor="experience">Experiência</label><br />
-              <input className="inputHome" type="text" id="experience" placeholder="Resumo" onChange={handleExperience} />
+              <input className="inputHome" type="text" id="experience" placeholder="Experiência" onChange={handleExperience} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="experience">Experiência 2</label><br />
+              <input className="inputHome" type="text" id="experience" placeholder="Experiência" onChange={handleExperience2} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="experience">Experiência 3</label><br />
+              <input className="inputHome" type="text" id="experience" placeholder="Experiência" onChange={handleExperience3} />
             </div>
             <div>
               <label className="labelHome" htmlFor="formation">Formação</label><br />
-              <input className="inputHome" type="text" id="formation" placeholder="Resumo" onChange={handleFormation} />
+              <input className="inputHome" type="text" id="formation" placeholder="Formação" onChange={handleFormation} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="formation">Formação 2</label><br />
+              <input className="inputHome" type="text" id="formation" placeholder="Formação" onChange={handleFormation2} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="formation">Formação 3</label><br />
+              <input className="inputHome" type="text" id="formation" placeholder="Formação" onChange={handleFormation3} />
             </div>
             <button className="btn-nav" type="submit" onClick={newDoc}>Confirmar</button>
           </form>
