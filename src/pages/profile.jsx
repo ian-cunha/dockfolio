@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { NavBar } from "../components/navbar";
 import { useEffect } from "react"
-import { doc, updateDoc, getDoc } from "firebase/firestore";
+import { doc, updateDoc, setDoc, getDoc } from "firebase/firestore";
 
 export const Profile = () => {
 
@@ -328,8 +328,19 @@ export const Profile = () => {
     }
   }
 
+  const newUser = async () => {
+    if (name === null) {
+      await setDoc(doc(storeApp, "profiles", uid), {
+        lastUpdate: new Date(),
+      });
+    } else {
+      console.log(new Date())
+    }
+  }
+
   useEffect(() => {
     getDataBase()
+    newUser()
   }, [])
 
   return (
