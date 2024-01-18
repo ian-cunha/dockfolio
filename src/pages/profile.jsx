@@ -70,9 +70,11 @@ export const Profile = () => {
   const handleLanguage2 = (event) => setLanguage2(event.target.value)
   const handleLanguage3 = (event) => setLanguage3(event.target.value)
 
-  const handleUpdateName = () => {
+  const handleUpdateName = async (event) => {
+    event.preventDefault()
+
     updateProfile(auth.currentUser, {
-      displayName: displayName
+      displayName: displayName,
     }).then(() => {
       alert('Nome atualizado')
     }).catch((error) => {
@@ -80,7 +82,9 @@ export const Profile = () => {
     });
   }
 
-  const handleUpdatePhoto = () => {
+  const handleUpdatePhoto = async (event) => {
+    event.preventDefault()
+
     updateProfile(auth.currentUser, {
       photoURL: photoURL
     }).then(() => {
