@@ -26,6 +26,10 @@ body {
   overflow-x: hidden;
 }
 
+textarea {
+  height: 100px !important;
+}
+
 li {
   list-style-type: none;
 }

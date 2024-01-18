@@ -19,11 +19,9 @@ export const Structure = () => {
     const docSnap = await getDoc(docRef)
 
     if (docSnap.exists()) {
-      // console.log("Document data:", docSnap.data())
       setDataBase(docSnap.data())
     } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!")
+      console.log("Sem dados!")
     }
   }
 
@@ -49,7 +47,7 @@ export const Structure = () => {
                 <p className="title-top"><i className="bi bi-telephone"></i> {dataBase.number}</p>
               }
               {email != null &&
-                <p className="title-top"><i className="bi bi-envelope"></i> {email}</p>
+                <p className="title-top"><i className="bi bi-envelope"></i> {dataBase.email}</p>
               }
               {dataBase.address != null &&
                 <p className="title-top"><i className="bi bi-geo-alt"></i> {dataBase.address}</p>
@@ -86,6 +84,8 @@ export const Structure = () => {
             <p>{dataBase.experience}</p>
             <p>{dataBase.experience2}</p>
             <p>{dataBase.experience3}</p>
+            <p>{dataBase.experience4}</p>
+            <p>{dataBase.experience5}</p>
           </div>
 
           <div className="structure-style">
@@ -93,6 +93,8 @@ export const Structure = () => {
             <p>{dataBase.formation}</p>
             <p>{dataBase.formation2}</p>
             <p>{dataBase.formation3}</p>
+            <p>{dataBase.formation4}</p>
+            <p>{dataBase.formation5}</p>
           </div>
 
         </div>

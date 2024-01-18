@@ -1,31 +1,39 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { auth, storeApp } from "../config/firebase"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { NavBar } from "../components/navbar";
-
-import { doc, setDoc } from "firebase/firestore";
+import { useEffect } from "react"
+import { doc, setDoc, getDoc } from "firebase/firestore";
 
 export const Profile = () => {
 
   const [displayName, setDisplayName] = useState('')
   const [photoURL, setPhotoURL] = useState('')
-
+  const [emailData, setEmailData] = useState('')
   const [func, setFunction] = useState('')
   const [number, setNumber] = useState('')
   const [address, setAddress] = useState('')
 
   const [resume, setResume] = useState('')
+
   const [experience, setExperience] = useState('')
   const [experience2, setExperience2] = useState('')
   const [experience3, setExperience3] = useState('')
+  const [experience4, setExperience4] = useState('')
+  const [experience5, setExperience5] = useState('')
+
   const [formation, setFormation] = useState('')
   const [formation2, setFormation2] = useState('')
   const [formation3, setFormation3] = useState('')
+  const [formation4, setFormation4] = useState('')
+  const [formation5, setFormation5] = useState('')
 
   const handleDisplayName = (event) => setDisplayName(event.target.value)
   const handlePhotoURL = (event) => setPhotoURL(event.target.value)
 
+  const handleEmailData = (event) => setEmailData(event.target.value)
   const handleFunction = (event) => setFunction(event.target.value)
   const handleNumber = (event) => setNumber(event.target.value)
   const handleAddress = (event) => setAddress(event.target.value)
@@ -34,9 +42,13 @@ export const Profile = () => {
   const handleExperience = (event) => setExperience(event.target.value)
   const handleExperience2 = (event) => setExperience2(event.target.value)
   const handleExperience3 = (event) => setExperience3(event.target.value)
+  const handleExperience4 = (event) => setExperience4(event.target.value)
+  const handleExperience5 = (event) => setExperience5(event.target.value)
   const handleFormation = (event) => setFormation(event.target.value)
   const handleFormation2 = (event) => setFormation2(event.target.value)
   const handleFormation3 = (event) => setFormation3(event.target.value)
+  const handleFormation4 = (event) => setFormation4(event.target.value)
+  const handleFormation5 = (event) => setFormation5(event.target.value)
 
   const handleUpdateName = () => {
     updateProfile(auth.currentUser, {
@@ -70,20 +82,40 @@ export const Profile = () => {
 
     await setDoc(doc(storeApp, "profiles", uid), {
       function: func,
+      email: emailData,
       number: number,
       address: address,
       resume: resume,
       experience: experience,
       experience2: experience2,
       experience3: experience3,
+      experience4: experience4,
+      experience5: experience5,
       formation: formation,
       formation2: formation2,
       formation3: formation3,
+      formation4: formation4,
+      formation5: formation5,
     });
-
     alert('Atualizado')
-
   }
+
+  const [dataBase, setDataBase] = useState('')
+
+  const getDataBase = async () => {
+    const docRef = doc(storeApp, "profiles", uid)
+    const docSnap = await getDoc(docRef)
+
+    if (docSnap.exists()) {
+      setDataBase(docSnap.data())
+    } else {
+      console.log("Sem dados!")
+    }
+  }
+
+  useEffect(() => {
+    getDataBase()
+  }, [])
 
   return (
     <section>
@@ -95,7 +127,7 @@ export const Profile = () => {
             <img className="photo" width='150' src={photo} />
           }
           <p className="name">{name}</p>
-          <p className="email-top">{email}</p>
+          <p className="email-top">Conta: {email}</p>
         </div>
 
         <h2>Dados do perfil</h2>
@@ -119,43 +151,63 @@ export const Profile = () => {
             <h3>Dados</h3>
             <div>
               <label className="labelHome" htmlFor="function">Função</label><br />
-              <input className="inputProfile" type="text" id="function" placeholder="Função" onChange={handleFunction} />
+              <input className="inputProfile" type="text" id="function" defaultValue={dataBase.function} placeholder="Função" onChange={handleFunction} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="emailData">E-mail</label><br />
+              <input className="inputProfile" type="email" id="emailData" defaultValue={dataBase.email} placeholder="E-mail" onChange={handleEmailData} />
             </div>
             <div>
               <label className="labelHome" htmlFor="number">Número</label><br />
-              <input className="inputProfile" type="number" id="number" placeholder="Número" onChange={handleNumber} />
+              <input className="inputProfile" type="number" id="number" defaultValue={dataBase.number} placeholder="(99) 9999-9999" onChange={handleNumber} />
             </div>
             <div>
               <label className="labelHome" htmlFor="address">Endereço</label><br />
-              <input className="inputProfile" type="text" id="address" placeholder="Endereço" onChange={handleAddress} />
+              <input className="inputProfile" type="text" id="address" defaultValue={dataBase.address} placeholder="Endereço" onChange={handleAddress} />
             </div>
             <div>
               <label className="labelHome" htmlFor="title">Resumo</label><br />
-              <input className="inputProfile" type="text" id="title" placeholder="Resumo" onChange={handleResume} />
+              <textarea className="inputProfile" type="text" id="title" defaultValue={dataBase.resume} placeholder="Resumo" onChange={handleResume} />
             </div>
             <div>
               <label className="labelHome" htmlFor="experience">Experiência</label><br />
-              <input className="inputProfile" type="text" id="experience" placeholder="Experiência" onChange={handleExperience} />
+              <textarea className="inputProfile" type="text" id="experience" defaultValue={dataBase.experience} placeholder="Experiência" onChange={handleExperience} />
             </div>
             <div>
               <label className="labelHome" htmlFor="experience">Experiência 2</label><br />
-              <input className="inputProfile" type="text" id="experience" placeholder="Experiência" onChange={handleExperience2} />
+              <textarea className="inputProfile" type="text" id="experience" defaultValue={dataBase.experience2} placeholder="Experiência 2" onChange={handleExperience2} />
             </div>
             <div>
               <label className="labelHome" htmlFor="experience">Experiência 3</label><br />
-              <input className="inputProfile" type="text" id="experience" placeholder="Experiência" onChange={handleExperience3} />
+              <textarea className="inputProfile" type="text" id="experience" defaultValue={dataBase.experience3} placeholder="Experiência 3" onChange={handleExperience3} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="experience">Experiência 4</label><br />
+              <textarea className="inputProfile" type="text" id="experience" defaultValue={dataBase.experience4} placeholder="Experiência 4" onChange={handleExperience4} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="experience">Experiência 5</label><br />
+              <textarea className="inputProfile" type="text" id="experience" defaultValue={dataBase.experience5} placeholder="Experiência 5" onChange={handleExperience5} />
             </div>
             <div>
               <label className="labelHome" htmlFor="formation">Formação</label><br />
-              <input className="inputProfile" type="text" id="formation" placeholder="Formação" onChange={handleFormation} />
+              <textarea className="inputProfile" type="text" id="formation" defaultValue={dataBase.formation} placeholder="Formação" onChange={handleFormation} />
             </div>
             <div>
               <label className="labelHome" htmlFor="formation">Formação 2</label><br />
-              <input className="inputProfile" type="text" id="formation" placeholder="Formação" onChange={handleFormation2} />
+              <textarea className="inputProfile" type="text" id="formation" defaultValue={dataBase.formation2} placeholder="Formação 2" onChange={handleFormation2} />
             </div>
             <div>
               <label className="labelHome" htmlFor="formation">Formação 3</label><br />
-              <input className="inputProfile" type="text" id="formation" placeholder="Formação" onChange={handleFormation3} />
+              <textarea className="inputProfile" type="text" id="formation" defaultValue={dataBase.formation3} placeholder="Formação 3" onChange={handleFormation3} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="formation">Formação 4</label><br />
+              <textarea className="inputProfile" type="text" id="formation" defaultValue={dataBase.formation4} placeholder="Formação 4" onChange={handleFormation4} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="formation">Formação 5</label><br />
+              <textarea className="inputProfile" type="text" id="formation" defaultValue={dataBase.formation5} placeholder="Formação 5" onChange={handleFormation5} />
             </div>
             <button className="btn-nav" type="submit" onClick={newDoc}><i className="bi bi-check-lg"></i> Confirmar</button>
           </form>
