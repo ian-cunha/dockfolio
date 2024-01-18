@@ -333,8 +333,6 @@ export const Profile = () => {
       await setDoc(doc(storeApp, "profiles", uid), {
         lastUpdate: new Date(),
       });
-    } else {
-      console.log(new Date())
     }
   }
 
