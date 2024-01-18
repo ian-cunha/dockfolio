@@ -40,8 +40,8 @@ export const Structure = () => {
           {photo != null &&
             <div className="structure-top">
               <p className="name-top">{name}</p>
-              {dataBase.function != null &&
-                <p className="title-top"><i className="bi bi-briefcase"></i> {dataBase.function}</p>
+              {dataBase.func != null &&
+                <p className="title-top"><i className="bi bi-briefcase"></i> {dataBase.func}</p>
               }
               {dataBase.number != null &&
                 <p className="title-top"><i className="bi bi-telephone"></i> {dataBase.number}</p>
@@ -74,6 +74,7 @@ export const Structure = () => {
         </div>
 
         <div className="data">
+
           <div className="structure-style">
             <h3>Resumo</h3>
             <p>{dataBase.resume}</p>
@@ -95,6 +96,22 @@ export const Structure = () => {
             <p>{dataBase.formation3}</p>
             <p>{dataBase.formation4}</p>
             <p>{dataBase.formation5}</p>
+          </div>
+
+          <div className="structure-style">
+            <h3>Competências</h3>
+            <p>{dataBase.skill}</p>
+            <p>{dataBase.skill2}</p>
+            <p>{dataBase.skill3}</p>
+            <p>{dataBase.skill4}</p>
+            <p>{dataBase.skill5}</p>
+          </div>
+
+          <div className="structure-style">
+            <h3>Idiomas</h3>
+            <p>{dataBase.language}</p>
+            <p>{dataBase.language2}</p>
+            <p>{dataBase.language3}</p>
           </div>
 
         </div>

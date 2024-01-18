@@ -30,6 +30,16 @@ export const Profile = () => {
   const [formation4, setFormation4] = useState('')
   const [formation5, setFormation5] = useState('')
 
+  const [skill, setSkill] = useState('')
+  const [skill2, setSkill2] = useState('')
+  const [skill3, setSkill3] = useState('')
+  const [skill4, setSkill4] = useState('')
+  const [skill5, setSkill5] = useState('')
+
+  const [language, setLanguage] = useState('')
+  const [language2, setLanguage2] = useState('')
+  const [language3, setLanguage3] = useState('')
+
   const handleDisplayName = (event) => setDisplayName(event.target.value)
   const handlePhotoURL = (event) => setPhotoURL(event.target.value)
 
@@ -49,6 +59,16 @@ export const Profile = () => {
   const handleFormation3 = (event) => setFormation3(event.target.value)
   const handleFormation4 = (event) => setFormation4(event.target.value)
   const handleFormation5 = (event) => setFormation5(event.target.value)
+
+  const handleSkill = (event) => setSkill(event.target.value)
+  const handleSkill2 = (event) => setSkill2(event.target.value)
+  const handleSkill3 = (event) => setSkill3(event.target.value)
+  const handleSkill4 = (event) => setSkill4(event.target.value)
+  const handleSkill5 = (event) => setSkill5(event.target.value)
+
+  const handleLanguage = (event) => setLanguage(event.target.value)
+  const handleLanguage2 = (event) => setLanguage2(event.target.value)
+  const handleLanguage3 = (event) => setLanguage3(event.target.value)
 
   const handleUpdateName = () => {
     updateProfile(auth.currentUser, {
@@ -81,7 +101,7 @@ export const Profile = () => {
     event.preventDefault()
 
     await setDoc(doc(storeApp, "profiles", uid), {
-      function: func,
+      func: func,
       email: emailData,
       number: number,
       address: address,
@@ -96,6 +116,14 @@ export const Profile = () => {
       formation3: formation3,
       formation4: formation4,
       formation5: formation5,
+      skill: skill,
+      skill2: skill2,
+      skill3: skill3,
+      skill4: skill4,
+      skill5: skill5,
+      language: language,
+      language2: language2,
+      language3: language3
     });
     alert('Atualizado')
   }
@@ -151,7 +179,7 @@ export const Profile = () => {
             <h3>Dados</h3>
             <div>
               <label className="labelHome" htmlFor="function">Função</label><br />
-              <input className="inputProfile" type="text" id="function" defaultValue={dataBase.function} placeholder="Função" onChange={handleFunction} />
+              <input className="inputProfile" type="text" id="function" defaultValue={dataBase.func} placeholder="Função" onChange={handleFunction} />
             </div>
             <div>
               <label className="labelHome" htmlFor="emailData">E-mail</label><br />
@@ -208,6 +236,38 @@ export const Profile = () => {
             <div>
               <label className="labelHome" htmlFor="formation">Formação 5</label><br />
               <textarea className="inputProfile" type="text" id="formation" defaultValue={dataBase.formation5} placeholder="Formação 5" onChange={handleFormation5} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="skill">Competência</label><br />
+              <input className="inputProfile" type="text" id="skill" defaultValue={dataBase.skill} placeholder="Competência" onChange={handleSkill} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="skill">Competência 2</label><br />
+              <input className="inputProfile" type="text" id="skill" defaultValue={dataBase.skill2} placeholder="Competência 2" onChange={handleSkill2} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="skill">Competência 3</label><br />
+              <input className="inputProfile" type="text" id="skill" defaultValue={dataBase.skill3} placeholder="Competência 3" onChange={handleSkill3} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="skill">Competência 4</label><br />
+              <input className="inputProfile" type="text" id="skill" defaultValue={dataBase.skill4} placeholder="Competência 4" onChange={handleSkill4} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="skill">Competência 5</label><br />
+              <input className="inputProfile" type="text" id="skill" defaultValue={dataBase.skill5} placeholder="Competência 5" onChange={handleSkill5} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="language">Idioma</label><br />
+              <input className="inputProfile" type="text" id="language" defaultValue={dataBase.language} placeholder="Idioma" onChange={handleLanguage} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="language">Idioma 2</label><br />
+              <input className="inputProfile" type="text" id="language" defaultValue={dataBase.language2} placeholder="Idioma 2" onChange={handleLanguage2} />
+            </div>
+            <div>
+              <label className="labelHome" htmlFor="language">Idioma 3</label><br />
+              <input className="inputProfile" type="text" id="language" defaultValue={dataBase.language3} placeholder="Idioma 3" onChange={handleLanguage3} />
             </div>
             <button className="btn-nav" type="submit" onClick={newDoc}><i className="bi bi-check-lg"></i> Confirmar</button>
           </form>
