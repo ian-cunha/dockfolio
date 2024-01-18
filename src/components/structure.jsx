@@ -43,11 +43,11 @@ export const Structure = () => {
               {dataBase.func != null &&
                 <p className="title-top"><i className="bi bi-briefcase"></i> {dataBase.func}</p>
               }
-              {dataBase.number != null &&
-                <p className="title-top"><i className="bi bi-telephone"></i> {dataBase.number}</p>
-              }
               {email != null &&
                 <p className="title-top"><i className="bi bi-envelope"></i> {dataBase.email}</p>
+              }
+              {dataBase.number != null &&
+                <p className="title-top"><i className="bi bi-telephone"></i> {dataBase.number}</p>
               }
               {dataBase.address != null &&
                 <p className="title-top"><i className="bi bi-geo-alt"></i> {dataBase.address}</p>

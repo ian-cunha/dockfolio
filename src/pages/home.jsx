@@ -29,6 +29,7 @@ export const Home = ({ user }) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage)
+        alert('Email ou senha inválido!')
       });
   }
 
@@ -43,6 +44,7 @@ export const Home = ({ user }) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage)
+        alert('Email ou senha inválido!')
       });
   }
 

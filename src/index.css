@@ -27,7 +27,8 @@ body {
 }
 
 textarea {
-  height: 100px !important;
+  height: 150px !important;
+  font-size: 1.3em !important;
 }
 
 li {
@@ -133,12 +134,34 @@ button:focus-visible {
   width: 300px;
   height: 35px;
   margin-bottom: 20px;
+  border-radius: 8px;
+  border-style: solid;
+  font-size: 1.1em;
+}
+
+.inputHome:hover {
+  border-color: #535bf2;
+}
+
+.inputHome:active {
+  border-color: #535bf2;
 }
 
 .inputProfile {
-  width: 50%;
+  width: 70vw;
   height: 35px;
   margin-bottom: 20px;
+  border-radius: 8px;
+  border-style: solid;
+  font-size: 1.1em;
+}
+
+.inputProfile:hover {
+  border-color: #535bf2;
+}
+
+.inputProfile:active {
+  border-color: #535bf2;
 }
 
 .aLink {
@@ -164,6 +187,11 @@ nav {
 
 .structure-top-center {
   text-align: center;
+}
+
+.btn-profile {
+  padding: 10px 10px;
+  width: 70vw;
 }
 
 @media only screen and (max-width: 600px) {
@@ -203,6 +231,11 @@ nav {
 
   .btn-nav {
     padding: 10px 10px;
+  }
+
+  .btn-profile {
+    padding: 10px 10px;
+    width: 90%;
   }
 
   .field {
@@ -280,6 +313,7 @@ nav {
 
   .structure-style {
     margin: 0 65px;
+    text-align: justify;
   }
 }
 
@@ -376,4 +410,11 @@ fieldset {
 
 .container {
   max-width: 1024px;
+}
+
+.areaStyle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
