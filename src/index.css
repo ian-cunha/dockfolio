@@ -360,3 +360,9 @@ fieldset {
   margin-bottom: 50px;
   margin-top: -25px;
 }
+
+.skill {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

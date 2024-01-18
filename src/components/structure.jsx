@@ -100,11 +100,13 @@ export const Structure = () => {
 
           <div className="structure-style">
             <h3>Competências</h3>
-            <p>{dataBase.skill}</p>
-            <p>{dataBase.skill2}</p>
-            <p>{dataBase.skill3}</p>
-            <p>{dataBase.skill4}</p>
-            <p>{dataBase.skill5}</p>
+            <div className="skill">
+              <p>{dataBase.skill}</p>
+              <p>{dataBase.skill2}</p>
+              <p>{dataBase.skill3}</p>
+              <p>{dataBase.skill4}</p>
+              <p>{dataBase.skill5}</p>
+            </div>
           </div>
 
           <div className="structure-style">
