@@ -31,7 +31,7 @@ export const Structure = () => {
 
   return (
     <div className="structure">
-      <div className='printme'>
+      <div className='printme container'>
         <h2 className='no-printme'>Dados do Usuário</h2>
         <div className="top">
           {photo != null &&
