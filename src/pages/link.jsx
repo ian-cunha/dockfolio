@@ -50,7 +50,7 @@ export const Link = () => {
         <div className='printme container'>
           <div className="top">
             {dataBase.photoLink != 0 &&
-              <img className="photo" width='150' src={dataBase.photoLink} alt="Foto de perfil" />
+              <img className="photo" width='150' height='150' src={dataBase.photoLink} alt="Foto de perfil" />
             }
             {dataBase.photoLink != 0 &&
               <div className="structure-top">
@@ -124,11 +124,19 @@ export const Link = () => {
                 <h3>Competências</h3>
               }
               <div className="skill">
-                <p>{dataBase.skill}</p>
+                {dataBase.skill != 0 &&
+                  <p>{dataBase.skill}</p>
+                }
                 <p>{dataBase.skill2}</p>
-                <p>{dataBase.skill3}</p>
-                <p>{dataBase.skill4}</p>
-                <p>{dataBase.skill5}</p>
+                {dataBase.skill3 != 0 &&
+                  <p>{dataBase.skill3}</p>
+                }
+                {dataBase.skill4 != 0 &&
+                  <p>{dataBase.skill4}</p>
+                }
+                {dataBase.skill5 != 0 &&
+                  <p>{dataBase.skill5}</p>
+                }
               </div>
             </div>
 
@@ -136,9 +144,15 @@ export const Link = () => {
               {dataBase.language != 0 &&
                 <h3>Idiomas</h3>
               }
-              <p>{dataBase.language}</p>
-              <p>{dataBase.language2}</p>
-              <p>{dataBase.language3}</p>
+              {dataBase.language != 0 &&
+                <p>{dataBase.language}</p>
+              }
+              {dataBase.language2 != 0 &&
+                <p>{dataBase.language2}</p>
+              }
+              {dataBase.language3 != 0 &&
+                <p>{dataBase.language3}</p>
+              }
             </div>
 
           </div>
