@@ -518,6 +518,11 @@ fieldset {
 
 .back-profile {
   margin-bottom: 15px;
+  background-color: #535bf2;
+}
+
+.back-profile:hover {
+  background-color: #747bff;
 }
 
 .email-top {
