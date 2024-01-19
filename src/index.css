@@ -363,11 +363,25 @@ nav {
   display: block;
   justify-content: center;
   align-items: center;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.structure {
+  margin: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media print {
   .no-printme {
     display: none;
+  }
+
+  .dockfolioPage {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .top {
@@ -450,15 +464,6 @@ fieldset {
 
 .name {
   font-size: 2em;
-}
-
-.structure {
-  margin: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 80px;
-  margin-top: 80px;
 }
 
 .top {
