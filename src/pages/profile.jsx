@@ -9,7 +9,7 @@ import { doc, updateDoc, setDoc, getDoc } from "firebase/firestore";
 
 export const Profile = () => {
 
-  const bugMsg = ' Erro, sem dados ou dados iguals.'
+  const bugMsg = ' Erro, sem dados ou dados iguais.'
   const sucessMsg = ' Atualizado com sucesso!'
 
   const [displayName, setDisplayName] = useState('')
