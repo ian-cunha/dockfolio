@@ -109,7 +109,9 @@ export const Structure = () => {
               {dataBase.skill != 0 &&
                 <p>{dataBase.skill}</p>
               }
-              <p>{dataBase.skill2}</p>
+              {dataBase.skill2 != 0 &&
+                <p>{dataBase.skill2}</p>
+              }
               {dataBase.skill3 != 0 &&
                 <p>{dataBase.skill3}</p>
               }
