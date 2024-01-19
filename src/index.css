@@ -303,6 +303,16 @@ nav {
     border-radius: 8px;
   }
 
+  .messageError {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: red;
+    margin: 24px 50px 0 50px;
+    border-radius: 8px;
+  }
+
   .skill {
     display: block !important;
   }
