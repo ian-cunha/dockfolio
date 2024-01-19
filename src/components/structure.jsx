@@ -29,7 +29,7 @@ export const Structure = () => {
   return (
     <div className="structure">
       <div className='printme container'>
-        <h2 className='no-printme'>Dados do Usuário</h2>
+        <h2 className='dataDisplay no-printme'><i className="bi bi-person-bounding-box"></i> Dados do Usuário</h2>
         <div className="top">
           {dataBase.photoLink != 0 &&
             <img className="photo" width='150' src={dataBase.photoLink} alt="Foto de perfil" />

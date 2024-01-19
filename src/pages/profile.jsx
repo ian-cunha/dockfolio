@@ -575,7 +575,7 @@ export const Profile = () => {
         <h2>Dados do perfil</h2>
 
         <div className="updateProfile">
-          <form className="formTop">
+          <form className="formData">
             <div className="areaStyle">
               <br />
               <label className="labelHome" htmlFor="name">Apelido</label><br />
@@ -597,9 +597,6 @@ export const Profile = () => {
               <button className="btn-profile" type="submit" onClick={updatePhotoLink}><i className="bi bi-check-lg"></i> Aplicar</button>
               <br />
             </div>
-          </form>
-
-          <form className="formData">
             <div className="areaStyle">
               <br />
               <label className="labelHome" htmlFor="function">Função</label><br />
