@@ -14,7 +14,6 @@ export const NavBar = () => {
 
   const user = auth.currentUser;
   const uid = user.uid;
-  const share = 'share/';
 
   const navigate = useNavigate();
 
