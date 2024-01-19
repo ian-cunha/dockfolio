@@ -41,11 +41,7 @@ export const NavBar = () => {
           <div className="navContainer">
             <button className="btn-nav" onClick={() => navigate('/private')}><i className="bi bi-house"></i> Estrutura</button>
             <button className="btn-nav" onClick={() => navigate('/profile')}><i className="bi bi-person-circle"></i> Perfil</button>
-            <button className="btn-nav"
-              onClick={(e) => {
-                e.preventDefault(); window.location.href = share + uid;
-              }}
-            ><i className="bi bi-link-45deg"></i> Link</button>
+            <button className="btn-nav" onClick={() => navigate('/share/' + uid)}><i className="bi bi-link-45deg"></i> Link</button>
             <button className="btn-nav" onClick={handleSignOut}><i className="bi bi-x-circle"></i> Sair</button>
           </div>
         </div>
