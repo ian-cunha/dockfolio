@@ -8,6 +8,7 @@ import { Link } from "./pages/link"
 import { Private } from "./pages/private"
 import { useEffect, useState } from "react"
 import { Profile } from "./pages/profile"
+import { Fail } from "./pages/fail"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -37,7 +38,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='*' element={<Fail />} />
         <Route index path="/" element={<Home user={user} />} />
+        <Route index path="/share" element={<Fail />} />
         <Route index path="/share/:uid" element={<Link />} />
         <Route index path="/private" element={
           <ProtectedRoute user={user}>

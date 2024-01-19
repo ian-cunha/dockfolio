@@ -83,7 +83,7 @@ export const Profile = () => {
     }).then(() => {
       setMessage(
         <div className="message">
-          <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+          <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
         </div>
       )
       setTimeout(function () {
@@ -108,7 +108,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -124,7 +124,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -140,7 +140,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -156,7 +156,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -172,7 +172,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -188,7 +188,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -204,7 +204,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -220,7 +220,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -236,7 +236,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -252,7 +252,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -268,7 +268,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -284,7 +284,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -300,7 +300,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -316,7 +316,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -332,7 +332,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -348,7 +348,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -364,7 +364,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -380,7 +380,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -396,7 +396,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -412,7 +412,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -428,7 +428,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -444,7 +444,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -460,7 +460,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -476,7 +476,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {
@@ -492,7 +492,7 @@ export const Profile = () => {
     });
     setMessage(
       <div className="message">
-        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        <p><i className="bi bi-patch-check"></i> Atualizado com sucesso!</p>
       </div>
     )
     setTimeout(function () {

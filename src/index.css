@@ -413,6 +413,19 @@ nav {
   margin-bottom: 120px;
 }
 
+.fail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vw;
+  padding: 24px;
+}
+
+.logoFail {
+  width: 250px;
+}
+
 @media print {
   .no-printme {
     display: none;
