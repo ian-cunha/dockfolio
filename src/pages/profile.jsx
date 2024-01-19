@@ -10,7 +10,9 @@ import { doc, updateDoc, setDoc, getDoc } from "firebase/firestore";
 export const Profile = () => {
 
   const [displayName, setDisplayName] = useState('')
-  const [photoURL, setPhotoURL] = useState('')
+
+  const [fullName, setFullName] = useState('')
+  const [photoLink, setPhotoLink] = useState('')
   const [emailData, setEmailData] = useState('')
   const [func, setFunction] = useState('')
   const [number, setNumber] = useState('')
@@ -41,8 +43,9 @@ export const Profile = () => {
   const [language3, setLanguage3] = useState('')
 
   const handleDisplayName = (event) => setDisplayName(event.target.value)
-  const handlePhotoURL = (event) => setPhotoURL(event.target.value)
 
+  const handleFullName = (event) => setFullName(event.target.value)
+  const handlePhotoLink = (event) => setPhotoLink(event.target.value)
   const handleEmailData = (event) => setEmailData(event.target.value)
   const handleFunction = (event) => setFunction(event.target.value)
   const handleNumber = (event) => setNumber(event.target.value)
@@ -91,31 +94,43 @@ export const Profile = () => {
     });
   }
 
-  const handleUpdatePhoto = async (event) => {
-    event.preventDefault()
-
-    updateProfile(auth.currentUser, {
-      photoURL: photoURL
-    }).then(() => {
-      setMessage(
-        <div className="message">
-          <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
-        </div>
-      )
-      setTimeout(function () {
-        setMessage(false)
-      }, 2000)
-    }).catch((error) => {
-      alert(error)
-    });
-  }
-
   const navigate = useNavigate();
   const user = auth.currentUser;
   const email = user.email;
   const name = user.displayName;
-  const photo = user.photoURL;
   const uid = user.uid;
+
+  const updateFullName = async (event) => {
+    event.preventDefault()
+
+    await updateDoc(doc(storeApp, "profiles", uid), {
+      fullName: fullName,
+    });
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
+  }
+
+  const updatePhotoLink = async (event) => {
+    event.preventDefault()
+
+    await updateDoc(doc(storeApp, "profiles", uid), {
+      photoLink: photoLink,
+    });
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
+  }
 
   const updateFunc = async (event) => {
     event.preventDefault()
@@ -513,6 +528,8 @@ export const Profile = () => {
     if (name === null) {
       await setDoc(doc(storeApp, "profiles", uid), {
         lastUpdate: new Date(),
+        fullName: '',
+        photoLink: '',
         resume: '',
         language: '',
         number: '',
@@ -526,7 +543,7 @@ export const Profile = () => {
       setMessage(
         <div className="message">
           <h2>Bem-vindo ao Dockfolio!</h2>
-          <p className="messageWelcome">Adicone pelo menos seu nome para liberar acesso ao aplicativo.</p>
+          <p className="messageWelcome">Adicone pelo menos seu apelido para liberar acesso ao aplicativo.</p>
         </div>
       )
       setTimeout(function () {
@@ -546,8 +563,8 @@ export const Profile = () => {
       <div className="dockfolioPage">
         <h2>Configurações do perfil</h2>
         <div>
-          {photo != null &&
-            <img className="photo" width='150' src={photo} alt="Foto de perfil" />
+          {dataBase.photoLink != 0 &&
+            <img className="photo" width='150' src={dataBase.photoLink} alt="Foto de perfil" />
           }
           <p className="name">{name}</p>
           <p className="email-top">Conta: {email}</p>
@@ -561,16 +578,23 @@ export const Profile = () => {
           <form className="formTop">
             <div className="areaStyle">
               <br />
-              <label className="labelHome" htmlFor="name">Nome</label><br />
+              <label className="labelHome" htmlFor="name">Apelido</label><br />
               <input className="inputProfile" type="name" id="name" defaultValue={name} placeholder="Nome do usuário (obrigatório)" onChange={handleDisplayName} />
               <button className="btn-profile" type="submit" onClick={handleUpdateName}><i className="bi bi-check-lg"></i> Aplicar</button>
               <br />
             </div>
             <div className="areaStyle">
               <br />
+              <label className="labelHome" htmlFor="fullName">Nome completo</label><br />
+              <input className="inputProfile" type="name" id="fullName" defaultValue={dataBase.fullName} placeholder="Nome do usuário (obrigatório)" onChange={handleFullName} />
+              <button className="btn-profile" type="submit" onClick={updateFullName}><i className="bi bi-check-lg"></i> Aplicar</button>
+              <br />
+            </div>
+            <div className="areaStyle">
+              <br />
               <label className="labelHome" htmlFor="photo">Foto</label><br />
-              <input className="inputProfile" type="text" id="photo" defaultValue={photo} placeholder="URL da foto de perfil" onChange={handlePhotoURL} />
-              <button className="btn-profile" type="submit" onClick={handleUpdatePhoto}><i className="bi bi-check-lg"></i> Aplicar</button>
+              <input className="inputProfile" type="text" id="photo" defaultValue={dataBase.photoLink} placeholder="URL da foto de perfil" onChange={handlePhotoLink} />
+              <button className="btn-profile" type="submit" onClick={updatePhotoLink}><i className="bi bi-check-lg"></i> Aplicar</button>
               <br />
             </div>
           </form>

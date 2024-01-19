@@ -7,8 +7,6 @@ import { useEffect, useState } from "react"
 export const Structure = () => {
 
   const user = auth.currentUser;
-  const name = user.displayName;
-  const photo = user.photoURL;
   const uid = user.uid;
 
   const [dataBase, setDataBase] = useState('')
@@ -33,12 +31,12 @@ export const Structure = () => {
       <div className='printme container'>
         <h2 className='no-printme'>Dados do Usuário</h2>
         <div className="top">
-          {photo != null &&
-            <img className="photo" width='150' src={photo} alt="Foto de perfil" />
+          {dataBase.photoLink != 0 &&
+            <img className="photo" width='150' src={dataBase.photoLink} alt="Foto de perfil" />
           }
-          {photo != null &&
+          {dataBase.photoLink != 0 &&
             <div className="structure-top">
-              <p className="name-top">{name}</p>
+              <p className="name-top">{dataBase.fullName}</p>
               {dataBase.func != 0 &&
                 <p className="title-top"><i className="bi bi-briefcase"></i> {dataBase.func}</p>
               }
@@ -53,9 +51,9 @@ export const Structure = () => {
               }
             </div>
           }
-          {photo === null &&
+          {dataBase.photoLink == 0 &&
             <div className="structure-top-center">
-              <p className="name-top">{name}</p>
+              <p className="name-top">{dataBase.fullName}</p>
               {dataBase.func != 0 &&
                 <p className="title-top"><i className="bi bi-briefcase"></i> {dataBase.func}</p>
               }

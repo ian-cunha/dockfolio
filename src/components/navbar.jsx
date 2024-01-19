@@ -12,6 +12,10 @@ export const NavBar = () => {
       .catch((error) => console.log(error))
   }
 
+  const user = auth.currentUser;
+  const uid = user.uid;
+  const share = 'share/';
+
   const navigate = useNavigate();
 
   function dotBar() {
@@ -25,23 +29,27 @@ export const NavBar = () => {
 
   return (
     <div className="nav-base">
-    <nav className="no-printme">
-      <div className="logo">
-        <div className="logo-title">
-          <img width='40' src={logo} />
-          <h1 className="title-nav">Dockfolio</h1>
+      <nav className="no-printme">
+        <div className="logo">
+          <div className="logo-title">
+            <img width='40' src={logo} />
+            <h1 className="title-nav">Dockfolio</h1>
+          </div>
+          <button className="dot-btn" onClick={dotBar}><i className="bi bi-three-dots"></i></button>
         </div>
-        <button className="dot-btn" onClick={dotBar}><i className="bi bi-three-dots"></i></button>
-      </div>
-      <div id="nav" className="nav-bar">
-        <div className="navContainer">
-          <button className="btn-nav" onClick={() => navigate('/private')}><i className="bi bi-house"></i> Estrutura</button>
-          <button className="btn-nav" onClick={() => navigate('/profile')}><i className="bi bi-person-circle"></i> Perfil</button>
-          <button className="btn-nav" onClick={() => alert('Ferramenta em desenvolvimento.')}><i className="bi bi-link-45deg"></i> Link</button>
-          <button className="btn-nav" onClick={handleSignOut}><i className="bi bi-x-circle"></i> Sair</button>
+        <div id="nav" className="nav-bar">
+          <div className="navContainer">
+            <button className="btn-nav" onClick={() => navigate('/private')}><i className="bi bi-house"></i> Estrutura</button>
+            <button className="btn-nav" onClick={() => navigate('/profile')}><i className="bi bi-person-circle"></i> Perfil</button>
+            <button className="btn-nav"
+              onClick={(e) => {
+                e.preventDefault(); window.location.href = share + uid;
+              }}
+            ><i className="bi bi-link-45deg"></i> Link</button>
+            <button className="btn-nav" onClick={handleSignOut}><i className="bi bi-x-circle"></i> Sair</button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     </div>
   )
 }

@@ -142,6 +142,13 @@ button:focus-visible {
   justify-content: center;
 }
 
+.linkDown {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
 .formData {
   margin: 0 10px;
 }
@@ -401,6 +408,10 @@ nav {
   justify-content: center;
 }
 
+.structure-link {
+  margin-bottom: 120px;
+}
+
 @media print {
   .no-printme {
     display: none;
@@ -414,6 +425,11 @@ nav {
   .structure-top-center {
     text-align: justify;
   }
+
+  .structure-link {
+    margin-bottom: 0;
+  }
+  
 
   .dockfolioPage {
     margin-top: 0;

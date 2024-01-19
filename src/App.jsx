@@ -4,6 +4,7 @@ import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "./config/firebase"
 import { ProtectedRoute } from "./components/protectedRoute"
 import { Home } from "./pages/home"
+import { Link } from "./pages/link"
 import { Private } from "./pages/private"
 import { useEffect, useState } from "react"
 import { Profile } from "./pages/profile"
@@ -37,6 +38,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index path="/" element={<Home user={user} />} />
+        <Route index path="/share/:uid" element={<Link />} />
         <Route index path="/private" element={
           <ProtectedRoute user={user}>
             <Private />
