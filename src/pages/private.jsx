@@ -24,11 +24,12 @@ export const Private = () => {
   return (
     <section className="dockfolioPage">
       <NavBar />
-      <h3 className="no-printme">Olá, {name}.</h3>
       <Structure />
-      <button className="btn-nav no-printme back-profile" onClick={() => navigate('/profile')}><i className="bi bi-gear"></i> Configurar perfil</button>
-      <button className="btn-nav no-printme back-profile" onClick={() => window.print()}><i className="bi bi-cloud-arrow-down"></i> Baixar estrutura</button>
-      <button className="btn-nav no-printme back-profile" onClick={handleSignOut}><i className="bi bi-x-circle"></i> Sair</button>
+      <div className="nav-back">
+        <button className="btn-nav no-printme back-profile" onClick={() => navigate('/profile')}><i className="bi bi-arrow-clockwise"></i> Atualizar</button>
+        <button className="btn-nav no-printme back-profile" onClick={() => window.print()}><i className="bi bi-cloud-arrow-down"></i> Download</button>
+        <button className="btn-nav no-printme back-profile" onClick={handleSignOut}><i className="bi bi-x-circle"></i> Sair</button>
+      </div>
     </section>
   )
 }
