@@ -513,7 +513,25 @@ export const Profile = () => {
     if (name === null) {
       await setDoc(doc(storeApp, "profiles", uid), {
         lastUpdate: new Date(),
+        resume: '',
+        language: '',
+        number: '',
+        func: '',
+        formation: '',
+        experience: '',
+        email: '',
+        address: '',
+        skill: '',
       });
+      setMessage(
+        <div className="message">
+          <h2>Bem-vindo ao Dockfolio!</h2>
+          <p className="messageWelcome">Adicone pelo menos seu nome para liberar acesso ao aplicativo.</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 8000)
     }
   }
 

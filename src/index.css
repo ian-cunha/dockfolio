@@ -65,6 +65,10 @@ textarea {
   border-radius: 8px;
 }
 
+.messageWelcome {
+  margin: 24px 50px;
+}
+
 li {
   list-style-type: none;
 }
