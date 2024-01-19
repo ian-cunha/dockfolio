@@ -13,6 +13,29 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  ::selection {
+    color: #535bf2;
+    background: #1a1a1a;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #535bf2;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #747bff;
 }
 
 body {
@@ -411,6 +434,7 @@ fieldset {
 .title-nav {
   margin: 20px 15px;
   font-size: 1.5em;
+  cursor: pointer;
 }
 
 .logo-title {
