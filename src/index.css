@@ -65,6 +65,17 @@ textarea {
   border-radius: 8px;
 }
 
+.messageError {
+  box-shadow: 0 0 24px black;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: red;
+  margin: 100px 200px 0 200px;
+  border-radius: 8px;
+}
+
 .messageWelcome {
   margin: 24px 50px;
 }

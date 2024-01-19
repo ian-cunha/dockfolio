@@ -33,7 +33,7 @@ export const Home = ({ user }) => {
           const errorMessage = error.message;
           console.log(errorCode, errorMessage)
           setMessage(
-            <div className="message">
+            <div className="messageError">
               <p>Email ou Senha inválido!</p>
             </div>
           )
@@ -43,7 +43,7 @@ export const Home = ({ user }) => {
         });
     } else {
       setMessage(
-        <div className="message">
+        <div className="messageError">
           <p>Email ou Senha inválido!</p>
         </div>
       )
@@ -65,7 +65,7 @@ export const Home = ({ user }) => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage)
         setMessage(
-          <div className="message">
+          <div className="messageError">
             <p>Email ou Senha inválido!</p>
           </div>
         )
