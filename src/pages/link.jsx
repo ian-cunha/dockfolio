@@ -34,7 +34,7 @@ export const Link = () => {
   const clipboard = () => {
     navigator.clipboard.writeText(copyUrl)
     setMessage(
-      <div className="message">
+      <div className="message no-printme">
         <p><i className="bi bi-share"></i> Copiado!</p>
       </div>
     )
