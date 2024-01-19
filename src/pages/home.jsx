@@ -13,6 +13,7 @@ import { auth } from "../config/firebase"
 export const Home = ({ user }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   const [isSignUpActive, setIsSignUpActive] = useState(false)
   const handleMethodChange = () => {
     setIsSignUpActive(!isSignUpActive)
@@ -21,25 +22,35 @@ export const Home = ({ user }) => {
   const [message, setMessage] = useState(true);
 
   const handleSignUp = () => {
-    if (!email || !password) return
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user)
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
-        setMessage(
-          <div className="message">
-            <p>Email ou Senha inválido!</p>
-          </div>
-        )
-        setTimeout(function () {
-          setMessage(false)
-        }, 2000)
-      });
+    if (!email || !password || password === confirmPassword) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user)
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage)
+          setMessage(
+            <div className="message">
+              <p>Email ou Senha inválido!</p>
+            </div>
+          )
+          setTimeout(function () {
+            setMessage(false)
+          }, 2000)
+        });
+    } else {
+      setMessage(
+        <div className="message">
+          <p>Email ou Senha inválido!</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    }
   }
 
   const handleSignIn = () => {
@@ -66,6 +77,7 @@ export const Home = ({ user }) => {
 
   const handleEmailChange = (event) => setEmail(event.target.value)
   const handlePasswordChange = (event) => setPassword(event.target.value)
+  const handleConfirmPasswordChange = (event) => setConfirmPassword(event.target.value)
 
   if (user) {
     return <Navigate to='/private'></Navigate>
@@ -90,6 +102,11 @@ export const Home = ({ user }) => {
             <label className="labelHome" htmlFor="password">Senha<br /></label>
             <input className="inputHome" type="password" id="password" placeholder="Senha" onChange={handlePasswordChange} />
           </div>
+          {isSignUpActive &&
+            <div>
+              <label className="labelHome" htmlFor="password">Repetir senha<br /></label>
+              <input className="inputHome" type="password" id="password" placeholder="Repetir senha" onChange={handleConfirmPasswordChange} />
+            </div>}
           {isSignUpActive && <button onClick={handleSignUp} type="button">Cadastrar-se</button>}
           {!isSignUpActive && <button onClick={handleSignIn} type="button">Entrar</button>}
         </fieldset>
