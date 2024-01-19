@@ -529,7 +529,7 @@ export const Profile = () => {
         <h2>Configurações do perfil</h2>
         <div>
           {photo != null &&
-            <img className="photo" width='150' src={photo} />
+            <img className="photo" width='150' src={photo} alt="Foto de perfil" />
           }
           <p className="name">{name}</p>
           <p className="email-top">Conta: {email}</p>

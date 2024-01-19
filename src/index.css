@@ -402,6 +402,12 @@ nav {
     display: none;
   }
 
+  .structure-top-center {
+    text-align: justify;
+    left: 0;
+    margin-left: -210px;
+  }
+
   .dockfolioPage {
     margin-top: 0;
     margin-bottom: 0;
