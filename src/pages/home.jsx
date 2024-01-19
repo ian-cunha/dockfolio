@@ -18,6 +18,8 @@ export const Home = ({ user }) => {
     setIsSignUpActive(!isSignUpActive)
   }
 
+  const [message, setMessage] = useState(true);
+
   const handleSignUp = () => {
     if (!email || !password) return
     createUserWithEmailAndPassword(auth, email, password)
@@ -29,7 +31,14 @@ export const Home = ({ user }) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage)
-        alert('Email ou senha inválido!')
+        setMessage(
+          <div className="message">
+            <p>Email ou Senha inválido!</p>
+          </div>
+        )
+        setTimeout(function () {
+          setMessage(false)
+        }, 2000)
       });
   }
 
@@ -44,7 +53,14 @@ export const Home = ({ user }) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage)
-        alert('Email ou senha inválido!')
+        setMessage(
+          <div className="message">
+            <p>Email ou Senha inválido!</p>
+          </div>
+        )
+        setTimeout(function () {
+          setMessage(false)
+        }, 2000)
       });
   }
 
@@ -56,6 +72,7 @@ export const Home = ({ user }) => {
   }
   return (
     <section className="home">
+      {message}
       <div className="container-logo">
         <img width={150} src={logo} />
         <h1 className="title">Dockfolio</h1>

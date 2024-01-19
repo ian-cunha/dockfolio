@@ -70,13 +70,22 @@ export const Profile = () => {
   const handleLanguage2 = (event) => setLanguage2(event.target.value)
   const handleLanguage3 = (event) => setLanguage3(event.target.value)
 
+  const [message, setMessage] = useState(true);
+
   const handleUpdateName = async (event) => {
     event.preventDefault()
 
     updateProfile(auth.currentUser, {
       displayName: displayName,
     }).then(() => {
-      alert('Nome atualizado')
+      setMessage(
+        <div className="message">
+          <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
     }).catch((error) => {
       alert(error)
     });
@@ -88,7 +97,14 @@ export const Profile = () => {
     updateProfile(auth.currentUser, {
       photoURL: photoURL
     }).then(() => {
-      alert('Foto atualizada')
+      setMessage(
+        <div className="message">
+          <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
     }).catch((error) => {
       alert(error)
     });
@@ -107,7 +123,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       func: func,
     });
-    alert('Função atualizada')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateEmail = async (event) => {
@@ -116,7 +139,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       email: emailData,
     });
-    alert('Email atualizado!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateNumber = async (event) => {
@@ -125,7 +155,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       number: number,
     });
-    alert('Número atualizado!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateAdress = async (event) => {
@@ -134,7 +171,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       address: address,
     });
-    alert('Endereço atualizado!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateResume = async (event) => {
@@ -143,7 +187,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       resume: resume,
     });
-    alert('Resumo atualizado!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateExperience = async (event) => {
@@ -152,7 +203,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       experience: experience,
     });
-    alert('Experiência atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateExperience2 = async (event) => {
@@ -161,7 +219,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       experience2: experience2,
     });
-    alert('Experiência 2 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateExperience3 = async (event) => {
@@ -170,7 +235,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       experience3: experience3,
     });
-    alert('Experiência 3 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateExperience4 = async (event) => {
@@ -179,7 +251,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       experience4: experience4,
     });
-    alert('Experiência 4 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateExperience5 = async (event) => {
@@ -188,7 +267,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       experience5: experience5,
     });
-    alert('Experiência 5 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateFormation = async (event) => {
@@ -197,7 +283,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       formation: formation,
     });
-    alert('Formação atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateFormation2 = async (event) => {
@@ -206,7 +299,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       formation2: formation2,
     });
-    alert('Formação 2 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateFormation3 = async (event) => {
@@ -215,7 +315,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       formation3: formation3,
     });
-    alert('Formação 3 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateFormation4 = async (event) => {
@@ -224,7 +331,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       formation4: formation4,
     });
-    alert('Formação 4 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateFormation5 = async (event) => {
@@ -233,7 +347,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       formation5: formation5,
     });
-    alert('Formação 5 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateSkill = async (event) => {
@@ -242,7 +363,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       skill: skill,
     });
-    alert('Competência atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateSkill2 = async (event) => {
@@ -251,7 +379,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       skill2: skill2,
     });
-    alert('Competência 2 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateSkill3 = async (event) => {
@@ -260,7 +395,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       skill3: skill3,
     });
-    alert('Competência 3 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateSkill4 = async (event) => {
@@ -269,7 +411,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       skill4: skill4,
     });
-    alert('Competência 4 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateSkill5 = async (event) => {
@@ -278,7 +427,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       skill5: skill5,
     });
-    alert('Competência 5 atualizada!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateLanguage = async (event) => {
@@ -287,7 +443,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       language: language,
     });
-    alert('Idioma atualizado!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateLanguage2 = async (event) => {
@@ -296,7 +459,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       language2: language2,
     });
-    alert('Idioma 2 atualizado!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateLanguage3 = async (event) => {
@@ -305,7 +475,14 @@ export const Profile = () => {
     await updateDoc(doc(storeApp, "profiles", uid), {
       language3: language3,
     });
-    alert('Idioma 3 atualizado!')
+    setMessage(
+      <div className="message">
+        <p><span className="updateLoader"></span> Atualizado com sucesso!</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   {/*
@@ -357,6 +534,8 @@ export const Profile = () => {
           <p className="name">{name}</p>
           <p className="email-top">Conta: {email}</p>
         </div>
+
+        {message}
 
         <h2>Dados do perfil</h2>
 
