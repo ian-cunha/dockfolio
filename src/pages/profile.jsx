@@ -80,34 +80,34 @@ export const Profile = () => {
 
   const handleUpdateName = async (event) => {
     if (displayName != 0) {
-    event.preventDefault()
+      event.preventDefault()
 
-    updateProfile(auth.currentUser, {
-      displayName: displayName,
-    }).then(() => {
+      updateProfile(auth.currentUser, {
+        displayName: displayName,
+      }).then(() => {
+        setMessage(
+          <div className="message">
+            <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+          </div>
+        )
+        setTimeout(function () {
+          setMessage(false)
+        }, 2000)
+      }).catch((error) => {
+        alert(error)
+      });
+    } else {
+      event.preventDefault()
+
       setMessage(
-        <div className="message">
-          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+        <div className="messageError">
+          <p><i className="bi bi-bug"></i>{bugMsg}</p>
         </div>
       )
       setTimeout(function () {
         setMessage(false)
       }, 2000)
-    }).catch((error) => {
-      alert(error)
-    });
-  } else {
-    event.preventDefault()
-
-    setMessage(
-      <div className="messageError">
-        <p><i className="bi bi-bug"></i>{bugMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  }
+    }
   }
 
   const navigate = useNavigate();
@@ -146,32 +146,19 @@ export const Profile = () => {
   }
 
   const updatePhotoLink = async (event) => {
-    if (photoLink != 0) {
-      event.preventDefault()
+    event.preventDefault()
 
-      await updateDoc(doc(storeApp, "profiles", uid), {
-        photoLink: photoLink,
-      });
-      setMessage(
-        <div className="message">
-          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
-        </div>
-      )
-      setTimeout(function () {
-        setMessage(false)
-      }, 2000)
-    } else {
-      event.preventDefault()
-
-      setMessage(
-        <div className="messageError">
-          <p><i className="bi bi-bug"></i>{bugMsg}</p>
-        </div>
-      )
-      setTimeout(function () {
-        setMessage(false)
-      }, 2000)
-    }
+    await updateDoc(doc(storeApp, "profiles", uid), {
+      photoLink: photoLink,
+    });
+    setMessage(
+      <div className="message">
+        <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+      </div>
+    )
+    setTimeout(function () {
+      setMessage(false)
+    }, 2000)
   }
 
   const updateFunc = async (event) => {
@@ -604,236 +591,236 @@ export const Profile = () => {
 
   const updateSkill = async (event) => {
     if (skill != 0) {
-    event.preventDefault()
+      event.preventDefault()
 
-    await updateDoc(doc(storeApp, "profiles", uid), {
-      skill: skill,
-    });
-    setMessage(
-      <div className="message">
-        <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  } else {
-    event.preventDefault()
+      await updateDoc(doc(storeApp, "profiles", uid), {
+        skill: skill,
+      });
+      setMessage(
+        <div className="message">
+          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    } else {
+      event.preventDefault()
 
-    setMessage(
-      <div className="messageError">
-        <p><i className="bi bi-bug"></i>{bugMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  }
+      setMessage(
+        <div className="messageError">
+          <p><i className="bi bi-bug"></i>{bugMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    }
   }
 
   const updateSkill2 = async (event) => {
     if (skill2 != 0) {
-    event.preventDefault()
+      event.preventDefault()
 
-    await updateDoc(doc(storeApp, "profiles", uid), {
-      skill2: skill2,
-    });
-    setMessage(
-      <div className="message">
-        <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  } else {
-    event.preventDefault()
+      await updateDoc(doc(storeApp, "profiles", uid), {
+        skill2: skill2,
+      });
+      setMessage(
+        <div className="message">
+          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    } else {
+      event.preventDefault()
 
-    setMessage(
-      <div className="messageError">
-        <p><i className="bi bi-bug"></i>{bugMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  }
+      setMessage(
+        <div className="messageError">
+          <p><i className="bi bi-bug"></i>{bugMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    }
   }
 
   const updateSkill3 = async (event) => {
     if (skill3 != 0) {
-    event.preventDefault()
+      event.preventDefault()
 
-    await updateDoc(doc(storeApp, "profiles", uid), {
-      skill3: skill3,
-    });
-    setMessage(
-      <div className="message">
-        <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  } else {
-    event.preventDefault()
+      await updateDoc(doc(storeApp, "profiles", uid), {
+        skill3: skill3,
+      });
+      setMessage(
+        <div className="message">
+          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    } else {
+      event.preventDefault()
 
-    setMessage(
-      <div className="messageError">
-        <p><i className="bi bi-bug"></i>{bugMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  }
+      setMessage(
+        <div className="messageError">
+          <p><i className="bi bi-bug"></i>{bugMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    }
 
   }
 
   const updateSkill4 = async (event) => {
     if (skill4 != 0) {
-    event.preventDefault()
+      event.preventDefault()
 
-    await updateDoc(doc(storeApp, "profiles", uid), {
-      skill4: skill4,
-    });
-    setMessage(
-      <div className="message">
-        <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  } else {
-    event.preventDefault()
+      await updateDoc(doc(storeApp, "profiles", uid), {
+        skill4: skill4,
+      });
+      setMessage(
+        <div className="message">
+          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    } else {
+      event.preventDefault()
 
-    setMessage(
-      <div className="messageError">
-        <p><i className="bi bi-bug"></i>{bugMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  }
+      setMessage(
+        <div className="messageError">
+          <p><i className="bi bi-bug"></i>{bugMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    }
   }
 
   const updateSkill5 = async (event) => {
     if (skill5 != 0) {
-    event.preventDefault()
+      event.preventDefault()
 
-    await updateDoc(doc(storeApp, "profiles", uid), {
-      skill5: skill5,
-    });
-    setMessage(
-      <div className="message">
-        <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  } else {
-    event.preventDefault()
+      await updateDoc(doc(storeApp, "profiles", uid), {
+        skill5: skill5,
+      });
+      setMessage(
+        <div className="message">
+          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    } else {
+      event.preventDefault()
 
-    setMessage(
-      <div className="messageError">
-        <p><i className="bi bi-bug"></i>{bugMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  }
+      setMessage(
+        <div className="messageError">
+          <p><i className="bi bi-bug"></i>{bugMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    }
 
   }
 
   const updateLanguage = async (event) => {
     if (language != 0) {
-    event.preventDefault()
+      event.preventDefault()
 
-    await updateDoc(doc(storeApp, "profiles", uid), {
-      language: language,
-    });
-    setMessage(
-      <div className="message">
-        <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  } else {
-    event.preventDefault()
+      await updateDoc(doc(storeApp, "profiles", uid), {
+        language: language,
+      });
+      setMessage(
+        <div className="message">
+          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    } else {
+      event.preventDefault()
 
-    setMessage(
-      <div className="messageError">
-        <p><i className="bi bi-bug"></i>{bugMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  }
+      setMessage(
+        <div className="messageError">
+          <p><i className="bi bi-bug"></i>{bugMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    }
   }
 
   const updateLanguage2 = async (event) => {
     if (language2 != 0) {
-    event.preventDefault()
+      event.preventDefault()
 
-    await updateDoc(doc(storeApp, "profiles", uid), {
-      language2: language2,
-    });
-    setMessage(
-      <div className="message">
-        <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  } else {
-    event.preventDefault()
+      await updateDoc(doc(storeApp, "profiles", uid), {
+        language2: language2,
+      });
+      setMessage(
+        <div className="message">
+          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    } else {
+      event.preventDefault()
 
-    setMessage(
-      <div className="messageError">
-        <p><i className="bi bi-bug"></i>{bugMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  }
+      setMessage(
+        <div className="messageError">
+          <p><i className="bi bi-bug"></i>{bugMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    }
   }
 
   const updateLanguage3 = async (event) => {
     if (language3 != 0) {
-    event.preventDefault()
+      event.preventDefault()
 
-    await updateDoc(doc(storeApp, "profiles", uid), {
-      language3: language3,
-    });
-    setMessage(
-      <div className="message">
-        <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  } else {
-    event.preventDefault()
+      await updateDoc(doc(storeApp, "profiles", uid), {
+        language3: language3,
+      });
+      setMessage(
+        <div className="message">
+          <p><i className="bi bi-patch-check"></i>{sucessMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    } else {
+      event.preventDefault()
 
-    setMessage(
-      <div className="messageError">
-        <p><i className="bi bi-bug"></i>{bugMsg}</p>
-      </div>
-    )
-    setTimeout(function () {
-      setMessage(false)
-    }, 2000)
-  }
+      setMessage(
+        <div className="messageError">
+          <p><i className="bi bi-bug"></i>{bugMsg}</p>
+        </div>
+      )
+      setTimeout(function () {
+        setMessage(false)
+      }, 2000)
+    }
 
   }
 
