@@ -7,7 +7,6 @@ import { updateProfile as updateAuthProfile } from "firebase/auth";
 import { NavBar } from "../components/navbar";
 import { doc, updateDoc, setDoc, getDoc } from "firebase/firestore";
 
-// Hook customizado para "debounce" (atrasar a execução de uma função)
 const useDebounce = (callback, delay) => {
   const [timer, setTimer] = useState(null);
   return (...args) => {
@@ -16,7 +15,6 @@ const useDebounce = (callback, delay) => {
   };
 };
 
-// Componente de Input Genérico
 const FormInput = ({ value, onChange, placeholder, type = "text" }) => (
   <input
     type={type}
@@ -27,7 +25,6 @@ const FormInput = ({ value, onChange, placeholder, type = "text" }) => (
   />
 );
 
-// Componente de Textarea
 const FormTextarea = ({ value, onChange, placeholder }) => (
   <textarea
     value={value}
@@ -38,7 +35,6 @@ const FormTextarea = ({ value, onChange, placeholder }) => (
   />
 );
 
-// Componente para Seção Dinâmica (Links, Competências, etc.)
 const DynamicSection = ({ title, items, field, onUpdate, placeholder }) => (
   <div className="p-6 border-t border-gray-200 dark:border-gray-700">
     <label className="text-xl font-semibold mb-3 block">{title}</label>
@@ -55,7 +51,6 @@ const DynamicSection = ({ title, items, field, onUpdate, placeholder }) => (
   </div>
 );
 
-// Componente para Seções Estruturadas (Experiências, Formações)
 const StructuredSection = ({ title, items, field, onUpdate }) => {
   const newItem = { title: "", subtitle: "", period: "", location: "", description: "" };
 
@@ -87,7 +82,6 @@ const StructuredSection = ({ title, items, field, onUpdate }) => {
   );
 };
 
-// Componente para Seção de Projetos
 const ProjectsSection = ({ items, onUpdate }) => {
   const newItem = { name: "", link: "", description: "" };
 

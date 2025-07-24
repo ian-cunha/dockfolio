@@ -28,17 +28,14 @@ export const NavBar = () => {
   );
 
   return (
-    // 'print:hidden' é uma classe do Tailwind que esconde o elemento ao imprimir
     <div className="fixed top-0 left-0 right-0 bg-indigo-600 shadow-md z-50 print:hidden">
       <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo e Título */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('/private')}>
             <img width='40' src={logo} alt="Dockfolio Logo" />
             <h1 className="text-2xl font-bold text-white">Dockfolio</h1>
           </div>
 
-          {/* Menu para telas grandes */}
           <div className="hidden md:flex items-center space-x-2">
             <NavButton to="/private" icon="bi-house">Estrutura</NavButton>
             <NavButton to="/profile" icon="bi-person-circle">Perfil</NavButton>
@@ -52,7 +49,6 @@ export const NavBar = () => {
             </button>
           </div>
 
-          {/* Botão para menu mobile */}
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white text-2xl cursor-pointer">
               <i className="bi bi-three-dots"></i>
@@ -60,7 +56,6 @@ export const NavBar = () => {
           </div>
         </div>
 
-        {/* Menu Mobile Dropdown */}
         {isMenuOpen && (
           <div className="md:hidden pb-4">
             <NavButton to="/private" icon="bi-house">Estrutura</NavButton>
